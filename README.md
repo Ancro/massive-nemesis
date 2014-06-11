@@ -1,3 +1,3 @@
-Dokumentenbeschreibungssprachen
+Dokumentbeschreibungssprachen
 ===============================
 ### Projekt 2

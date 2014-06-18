@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<station>
+	<wbanno></wbanno>
+	<longitude></longitude>
+	<latitude></latitude>
+	<update>
+		<utc_date></utc_date>
+		<utc_time></utc_time>
+		<crx_vn></crx_vn>
+		<temp>
+			<t_calc></t_calc>
+			<t_hr_avg></t_hr_avg>
+			<t_max></t_max>
+			<t_min></t_min>
+		</temp>
+		<solar>
+			<solarad flag="">
+			</solarad>
+			<solarad_max flag="">
+			</solarad_max>
+			<solarad_min flag="">
+			</solarad_min>
+		</solar>
+		<sur type="">
+			<sur_temp flag="">
+			</sur_temp>
+			<sur_temp_max flag="">
+			</sur_temp_max>
+			<sur_temp_min flag="">
+			</sur_temp_min>
+		</sur_temp>
+		<rh_hr_avg flag="">
+		</rh_hr_avg>
+		<soil>
+			<moisture_50></moisture_50>
+			<moisture_100></moisture_100>
+			<temp_5></temp_5>
+			<temp_10></temp_10>
+			<temp_20></temp_20>
+			<temp_50></temp_50>
+			<temp_100></temp_100>
+		</soil>
+	</update>
+</station>

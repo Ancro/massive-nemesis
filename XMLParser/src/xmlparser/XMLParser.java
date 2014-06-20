@@ -181,6 +181,9 @@ public class XMLParser {
             writer.write("</station>\n");
             writer.flush();
 
+            writer.write("<!-- Total number of updates / data sets: " + numberOfUpdates + " -->\n");
+            writer.flush();
+
             writer.close();
             reader.close();
         } catch (FileNotFoundException ex) {

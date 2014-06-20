@@ -31,9 +31,9 @@ public class XMLParser {
 
             while ((line = reader.readLine()) != null) {
                 if (numberOfUpdates < 1) {
-                    wbanno = line.substring(0, 5);
-                    longitude = line.substring(41, 48);
-                    latitude = line.substring(49, 56);
+                    wbanno = line.substring(0, 5).trim();
+                    longitude = line.substring(41, 48).trim();
+                    latitude = line.substring(49, 56).trim();
 
                     writer.write(
                             "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
@@ -181,6 +181,7 @@ public class XMLParser {
             writer.write("</station>\n");
             writer.flush();
 
+            writer.close();
             reader.close();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(XMLParser.class.getName()).log(Level.SEVERE, null, ex);

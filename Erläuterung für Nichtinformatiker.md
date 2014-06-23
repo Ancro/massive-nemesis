@@ -1,6 +1,9 @@
 ## Projekt Dokumentbeschreibungssprachen
 ### Darstellung der XML-Struktur für Nichtinformatiker
-#### 1. Erklärung der Begriffe
+#### 1. Erläuterung der XML-Struktur
+Die XML-Struktur gibt Auskunft über die ganzjährig bestehende Messung einer Wetterstation.
+Die Struktur ist zweigeteilt in konstante und variable Informationen. Unter den konstanten Informationen befindet sich die Nummer der Wetterstation sowie die geografische Lage. Variable Informationen werden stündlich aktualisiert. Zum einen enthalten sie allgemeine Auskunft über das Datum, die Zeit und die Version der Software, womit die Daten analysiert werden und zum anderen wetterabhängige Informationen. Diese unterteilen sich in Lufttemperatur, Sonneneinstrahlung, relative Luftfeuchtigkeit und Bodentemperatur über und unter der Oberfläche.
+#### 2. Erklärung der Begriffe
 ##### `<station>`
 - beinhaltet alle Informationen der Wetterstation
 
@@ -85,6 +88,3 @@
 ##### `<soil><t_100>`
 - durchschnittliche Bodentemperatur 100 cm unterhalb der Oberfläche
 
-#### 2. Erläuterung der XML-Struktur
-Die XML-Struktur gibt Auskunft über die ganzjährig bestehende Messung einer Wetterstation.
-Die Struktur ist zweigeteilt in konstante und variable Informationen. Unter den konstanten Informationen befindet sich die Nummer der Wetterstation sowie die geografische Lage. Variable Informationen werden stündlich aktualisiert. Zum einen enthalten sie allgemeine Auskunft über das Datum, die Zeit und die Version der Software, womit die Daten analysiert werden und zum anderen wetterabhängige Informationen. Diese unterteilen sich in Lufttemperatur, Sonneneinstrahlung, relative Luftfeuchtigkeit und Bodentemperatur über und unter der Oberfläche.

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT wbanno (#PCDATA)>
+<!ELEMENT utc_t (#PCDATA)>
+<!ELEMENT utc_d (#PCDATA)>
+<!ELEMENT temp ((t_calc, t_hr, t_max, t_min))>
+<!ELEMENT t_min (#PCDATA)>
+<!ATTLIST t_min
+	flag (3 | 0) #IMPLIED
+>
+<!ELEMENT t_max (#PCDATA)>
+<!ATTLIST t_max
+	flag (3 | 0) #IMPLIED
+>
+<!ELEMENT t_hr (#PCDATA)>
+<!ELEMENT t_calc (#PCDATA)>
+<!ELEMENT t_50 (#PCDATA)>
+<!ELEMENT t_5 (#PCDATA)>
+<!ELEMENT t_20 (#PCDATA)>
+<!ELEMENT t_100 (#PCDATA)>
+<!ELEMENT t_10 (#PCDATA)>
+<!ELEMENT t (#PCDATA)>
+<!ATTLIST t
+	flag (3 | 0) #REQUIRED
+>
+<!ELEMENT sur ((t, t_max, t_min))>
+<!ATTLIST sur
+	type (U | R | C) #REQUIRED
+>
+<!ELEMENT station ((wbanno, longitude, latitude, set+))>
+<!ELEMENT solar ((avg, max, min))>
+<!ELEMENT soil ((moist_50, moist_100, t_5, t_10, t_20, t_50, t_100))>
+<!ELEMENT set ((utc_d, utc_t, crx_vn, temp, solar, sur, rh_hr, soil))>
+<!ELEMENT rh_hr (#PCDATA)>
+<!ATTLIST rh_hr
+	flag (3 | 0) #REQUIRED
+>
+<!ELEMENT moist_50 (#PCDATA)>
+<!ELEMENT moist_100 (#PCDATA)>
+<!ELEMENT min (#PCDATA)>
+<!ATTLIST min
+	flag (3 | 0) #REQUIRED
+>
+<!ELEMENT max (#PCDATA)>
+<!ATTLIST max
+	flag (3 | 0) #REQUIRED
+>
+<!ELEMENT longitude (#PCDATA)>
+<!ELEMENT latitude (#PCDATA)>
+<!ELEMENT crx_vn (#PCDATA)>
+<!ELEMENT avg (#PCDATA)>
+<!ATTLIST avg
+	flag (3 | 0) #REQUIRED
+>

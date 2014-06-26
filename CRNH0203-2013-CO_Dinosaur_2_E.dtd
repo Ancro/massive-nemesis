@@ -5,11 +5,11 @@
 <!ELEMENT temp ((t_calc, t_hr, t_max, t_min))>
 <!ELEMENT t_min (#PCDATA)>
 <!ATTLIST t_min
-	flag (3 | 0) #IMPLIED
+	flag (3 | 0) #REQUIRED
 >
 <!ELEMENT t_max (#PCDATA)>
 <!ATTLIST t_max
-	flag (3 | 0) #IMPLIED
+	flag (3 | 0) #REQUIRED
 >
 <!ELEMENT t_hr (#PCDATA)>
 <!ELEMENT t_calc (#PCDATA)>

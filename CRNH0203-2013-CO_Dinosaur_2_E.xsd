@@ -6,12 +6,10 @@
   <xs:element name="temp">
     <xs:complexType>
       <xs:sequence>
-        <xs:sequence>
-          <xs:element ref="t_calc"/>
-          <xs:element ref="t_hr"/>
-          <xs:element ref="t_max"/>
-          <xs:element ref="t_min"/>
-        </xs:sequence>
+        <xs:element ref="t_calc"/>
+        <xs:element ref="t_hr"/>
+        <xs:element ref="t_max"/>
+        <xs:element ref="t_min"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -73,11 +71,9 @@
   <xs:element name="sur">
     <xs:complexType>
       <xs:sequence>
-        <xs:sequence>
-          <xs:element ref="t"/>
-          <xs:element ref="t_max"/>
-          <xs:element ref="t_min"/>
-        </xs:sequence>
+        <xs:element ref="t"/>
+        <xs:element ref="t_max"/>
+        <xs:element ref="t_min"/>
       </xs:sequence>
       <xs:attribute name="type" use="required">
         <xs:simpleType>
@@ -93,54 +89,46 @@
   <xs:element name="station">
     <xs:complexType>
       <xs:sequence>
-        <xs:sequence>
-          <xs:element ref="wbanno"/>
-          <xs:element ref="longitude"/>
-          <xs:element ref="latitude"/>
-          <xs:element ref="set" maxOccurs="unbounded"/>
-        </xs:sequence>
+        <xs:element ref="wbanno"/>
+        <xs:element ref="longitude"/>
+        <xs:element ref="latitude"/>
+        <xs:element ref="set" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="solar">
     <xs:complexType>
       <xs:sequence>
-        <xs:sequence>
-          <xs:element ref="avg"/>
-          <xs:element ref="max"/>
-          <xs:element ref="min"/>
-        </xs:sequence>
+        <xs:element ref="avg"/>
+        <xs:element ref="max"/>
+        <xs:element ref="min"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="soil">
     <xs:complexType>
       <xs:sequence>
-        <xs:sequence>
-          <xs:element ref="moist_50"/>
-          <xs:element ref="moist_100"/>
-          <xs:element ref="t_5"/>
-          <xs:element ref="t_10"/>
-          <xs:element ref="t_20"/>
-          <xs:element ref="t_50"/>
-          <xs:element ref="t_100"/>
-        </xs:sequence>
+        <xs:element ref="moist_50"/>
+        <xs:element ref="moist_100"/>
+        <xs:element ref="t_5"/>
+        <xs:element ref="t_10"/>
+        <xs:element ref="t_20"/>
+        <xs:element ref="t_50"/>
+        <xs:element ref="t_100"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="set">
     <xs:complexType>
       <xs:sequence>
-        <xs:sequence>
-          <xs:element ref="utc_d"/>
-          <xs:element ref="utc_t"/>
-          <xs:element ref="crx_vn"/>
-          <xs:element ref="temp"/>
-          <xs:element ref="solar"/>
-          <xs:element ref="sur"/>
-          <xs:element ref="rh_hr"/>
-          <xs:element ref="soil"/>
-        </xs:sequence>
+        <xs:element ref="utc_d"/>
+        <xs:element ref="utc_t"/>
+        <xs:element ref="crx_vn"/>
+        <xs:element ref="temp"/>
+        <xs:element ref="solar"/>
+        <xs:element ref="sur"/>
+        <xs:element ref="rh_hr"/>
+        <xs:element ref="soil"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>

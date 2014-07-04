@@ -79,7 +79,7 @@ public class XMLParser {
                 updateData[6] = line.substring(81, 88).trim();     // T_MIN
                 updateData[7] = line.substring(97, 103).trim();    // SOLARAD
                 updateData[8] = line.substring(104, 105).trim();   // SOLARAD_FLAG
-                updateData[9] = line.substring(106, 112).trim();  // SOLARAD_MAX
+                updateData[9] = line.substring(106, 112).trim();   // SOLARAD_MAX
                 updateData[10] = line.substring(113, 114).trim();  // SOLARAD_MAX_FLAG
                 updateData[11] = line.substring(115, 121).trim();  // SOLARAD_MIN
                 updateData[12] = line.substring(122, 123).trim();  // SOLARAD_MIN_FLAG
@@ -177,6 +177,8 @@ public class XMLParser {
                 writer.flush();
 
                 numberOfUpdates++;
+
+                if (numberOfUpdates == 1000) break;
             }
 
             writer.write("</station>\n");

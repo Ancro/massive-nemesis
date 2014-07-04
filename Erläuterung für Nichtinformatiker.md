@@ -28,7 +28,7 @@ Die Struktur ist zweigeteilt in konstante und variable Informationen. Unter den 
 ##### `<dl_vn>`
 - Versionsnummer des Aufzeichnungsprogramms
 
-##### `<temp><calc>`
+##### `<temp><avg>`
 - Durchschnittslufttemperatur der letzten 5 Minuten in Grad Celsius
 
 ##### `<temp><hr>`
@@ -55,7 +55,7 @@ Die Struktur ist zweigeteilt in konstante und variable Informationen. Unter den 
 	- C — corrected (korrigiert)
 	- U — unknown (unbekannt)
 
-##### `<sur><calc>`
+##### `<sur><avg>`
 - Durchschnittsbodentemperatur der gesamten Stunde in Grad Celsius
 
 ##### `<sur><max>`

@@ -8,7 +8,7 @@
 		<utc_t></utc_t>
 		<dl_vn></dl_vn>
 		<temp>
-			<calc></calc>
+			<avg></avg>
 			<hr></hr>
 			<max></max>
 			<min></min>
@@ -22,8 +22,8 @@
 			</min>
 		</solar>
 		<sur type="">
-			<calc flag="">
-			</calc>
+			<avg flag="">
+			</avg>
 			<max flag="">
 			</max>
 			<min flag="">

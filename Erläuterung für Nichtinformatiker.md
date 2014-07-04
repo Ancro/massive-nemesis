@@ -25,19 +25,19 @@ Die Struktur ist zweigeteilt in konstante und variable Informationen. Unter den 
 ##### `<utc_t>`
 - Zeit nach UTC (koordinierte Weltzeit)
 
-##### `<crx_vn>`
+##### `<dl_vn>`
 - Versionsnummer des Aufzeichnungsprogramms
 
-##### `<temp><t_calc>`
+##### `<temp><calc>`
 - Durchschnittslufttemperatur der letzten 5 Minuten in Grad Celsius
 
-##### `<temp><t_hr>`
+##### `<temp><hr>`
 - Durchschnittslufttemperatur der gesamten Stunde
 
-##### `<temp><t_max>`
+##### `<temp><max>`
 - Höchste Lufttemperatur
 
-##### `<temp><t_min>`
+##### `<temp><min>`
 - Niedrigste Lufttemperatur
 
 ##### `<solar><avg>`
@@ -55,22 +55,22 @@ Die Struktur ist zweigeteilt in konstante und variable Informationen. Unter den 
 	- C — corrected (korrigiert)
 	- U — unknown (unbekannt)
 
-##### `<sur><t>`
+##### `<sur><calc>`
 - Durchschnittsbodentemperatur der gesamten Stunde in Grad Celsius
 
-##### `<sur><t_max>`
+##### `<sur><max>`
 - Höchste Bodentemperatur
 
-##### `<sur><t_min>`
+##### `<sur><min>`
 - Niedrigste Bodentemperatur
 
-##### `<rh_hr>`
+##### `<rh>`
 - Durchschnitt der relativen Luftfeuchtigkeit
 
-##### `<soil><moist_50>`
+##### `<soil><m_50>`
 - durchschnittliche Bodenfeuchtigkeit 50 cm unterhalb der Oberfläche
 
-##### `<soil><moist_100>`
+##### `<soil><m_100>`
 - durchschnittliche Bodenfeuchtigkeit 100 cm unterhalb der Oberfläche
 
 ##### `<soil><t_5>`

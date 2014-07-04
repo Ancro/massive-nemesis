@@ -3,42 +3,42 @@
 	<wbanno></wbanno>
 	<longitude></longitude>
 	<latitude></latitude>
-	<update>
-		<utc_date></utc_date>
-		<utc_time></utc_time>
-		<crx_vn></crx_vn>
+	<set>
+		<utc_d></utc_d>
+		<utc_t></utc_t>
+		<dl_vn></dl_vn>
 		<temp>
-			<t_calc></t_calc>
-			<t_hr_avg></t_hr_avg>
-			<t_max></t_max>
-			<t_min></t_min>
+			<calc></calc>
+			<hr></hr>
+			<max></max>
+			<min></min>
 		</temp>
 		<solar>
-			<solarad flag="">
-			</solarad>
-			<solarad_max flag="">
-			</solarad_max>
-			<solarad_min flag="">
-			</solarad_min>
+			<avg flag="">
+			</avg>
+			<max flag="">
+			</max>
+			<min flag="">
+			</min>
 		</solar>
 		<sur type="">
-			<sur_temp flag="">
-			</sur_temp>
-			<sur_temp_max flag="">
-			</sur_temp_max>
-			<sur_temp_min flag="">
-			</sur_temp_min>
-		</sur_temp>
-		<rh_hr_avg flag="">
-		</rh_hr_avg>
+			<calc flag="">
+			</calc>
+			<max flag="">
+			</max>
+			<min flag="">
+			</min>
+		</sur>
+		<rh flag="">
+		</rh>
 		<soil>
-			<moisture_50></moisture_50>
-			<moisture_100></moisture_100>
-			<temp_5></temp_5>
-			<temp_10></temp_10>
-			<temp_20></temp_20>
-			<temp_50></temp_50>
-			<temp_100></temp_100>
+			<m_50></m_50>
+			<m_100></m_100>
+			<t_5></t_5>
+			<t_10></t_10>
+			<t_20></t_20>
+			<t_50></t_50>
+			<t_100></t_100>
 		</soil>
-	</update>
+	</set>
 </station>

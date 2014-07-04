@@ -21,7 +21,7 @@
 - <soil><m_*> 	 -> SOIL_MOISTURE_*
 - <soil><t_*>     -> SOIL_TEMP_*
 -->
-<station>
+<station xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="CRNH0203-2013-CO_Dinosaur_2_E.xsd">
 	<wbanno>
 		94082
 	</wbanno>

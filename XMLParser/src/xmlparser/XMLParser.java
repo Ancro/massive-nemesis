@@ -59,7 +59,7 @@ public class XMLParser {
                             + "- <soil><m_*> 	 -> SOIL_MOISTURE_*\n"
                             + "- <soil><t_*>     -> SOIL_TEMP_*\n"
                             + "-->\n"
-                            + "<station>\n"
+                            + "<station xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"CRNH0203-2013-CO_Dinosaur_2_E.xsd\">\n"
                             + "\t<wbanno>\n"
                             + "\t\t" + wbanno + "\n"
                             + "\t</wbanno>\n"

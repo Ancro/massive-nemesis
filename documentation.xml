@@ -1,0 +1,21 @@
+<!--
+- Documentation for arbitrary element names
+- =========================================
+- <utc_d>         -> UTC_Date
+- <utc_t>         -> UTC_Time
+- <dl_vn></dl_vn> -> CRX_VN
+- <temp><calc>    -> T_CALC
+- <temp><hr>	  -> T_HR_AVG
+- <temp><max>     -> T_MAX
+- <temp><min>	  -> T_MIN
+- <solar><avg>    -> SOLARAD
+- <solar><max>    -> SOLARAD_MAX
+- <solar><min>    -> SOLARAD_MIN
+- <sur [@type]>   -> SUR_TEMP_TYPE
+- <sur><calc>     -> SUR_TEMP
+- <sur><max>      -> SUR_TEMP_MAX
+- <sur><min>      -> SUR_TEMP_MIN
+- <rh>            -> RH_HR_AVG
+- <soil><m_*>     -> SOIL_MOISTURE_*
+- <soil><t_*>     -> SOIL_TEMP_*
+-->

@@ -1,204 +1,176 @@
-<?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="CRNH0203-2013-CO_Dinosaur_2_E.dtd" elementFormDefault="qualified" targetNamespace="CRNH0203-2013-CO_Dinosaur_2_E.dtd">
-  <xs:element name="wbanno" type="xs:string"/>
-  <xs:element name="utc_t" type="xs:string"/>
-  <xs:element name="utc_d" type="xs:string"/>
-  <xs:element name="temp">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="t_calc"/>
-        <xs:element ref="t_hr"/>
-        <xs:element ref="t_max"/>
-        <xs:element ref="t_min"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="t_min">
-    <xs:complexType>
-      <xs:simpleContent>
-        <xs:extension base="xs:string">
-          <xs:attribute name="flag">
-            <xs:simpleType>
-              <xs:restriction base="xs:NMTOKEN">
-                <xs:enumeration value="3"/>
-                <xs:enumeration value="0"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:attribute>
-        </xs:extension>
-      </xs:simpleContent>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="t_max">
-    <xs:complexType>
-      <xs:simpleContent>
-        <xs:extension base="xs:string">
-          <xs:attribute name="flag">
-            <xs:simpleType>
-              <xs:restriction base="xs:NMTOKEN">
-                <xs:enumeration value="3"/>
-                <xs:enumeration value="0"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:attribute>
-        </xs:extension>
-      </xs:simpleContent>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="t_hr" type="xs:string"/>
-  <xs:element name="t_calc" type="xs:string"/>
-  <xs:element name="t_50" type="xs:string"/>
-  <xs:element name="t_5" type="xs:string"/>
-  <xs:element name="t_20" type="xs:string"/>
-  <xs:element name="t_100" type="xs:string"/>
-  <xs:element name="t_10" type="xs:string"/>
-  <xs:element name="t">
-    <xs:complexType>
-      <xs:simpleContent>
-        <xs:extension base="xs:string">
-          <xs:attribute name="flag" use="required">
-            <xs:simpleType>
-              <xs:restriction base="xs:NMTOKEN">
-                <xs:enumeration value="3"/>
-                <xs:enumeration value="0"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:attribute>
-        </xs:extension>
-      </xs:simpleContent>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="sur">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="t"/>
-        <xs:element ref="t_max"/>
-        <xs:element ref="t_min"/>
-      </xs:sequence>
-      <xs:attribute name="type" use="required">
-        <xs:simpleType>
-          <xs:restriction base="xs:NMTOKEN">
-            <xs:enumeration value="U"/>
-            <xs:enumeration value="R"/>
-            <xs:enumeration value="C"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:attribute>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="station">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="wbanno"/>
-        <xs:element ref="longitude"/>
-        <xs:element ref="latitude"/>
-        <xs:element ref="set" maxOccurs="unbounded"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="solar">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="avg"/>
-        <xs:element ref="max"/>
-        <xs:element ref="min"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="soil">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="moist_50"/>
-        <xs:element ref="moist_100"/>
-        <xs:element ref="t_5"/>
-        <xs:element ref="t_10"/>
-        <xs:element ref="t_20"/>
-        <xs:element ref="t_50"/>
-        <xs:element ref="t_100"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="set">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="utc_d"/>
-        <xs:element ref="utc_t"/>
-        <xs:element ref="crx_vn"/>
-        <xs:element ref="temp"/>
-        <xs:element ref="solar"/>
-        <xs:element ref="sur"/>
-        <xs:element ref="rh_hr"/>
-        <xs:element ref="soil"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="rh_hr">
-    <xs:complexType>
-      <xs:simpleContent>
-        <xs:extension base="xs:string">
-          <xs:attribute name="flag" use="required">
-            <xs:simpleType>
-              <xs:restriction base="xs:NMTOKEN">
-                <xs:enumeration value="3"/>
-                <xs:enumeration value="0"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:attribute>
-        </xs:extension>
-      </xs:simpleContent>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="moist_50" type="xs:string"/>
-  <xs:element name="moist_100" type="xs:string"/>
-  <xs:element name="min">
-    <xs:complexType>
-      <xs:simpleContent>
-        <xs:extension base="xs:string">
-          <xs:attribute name="flag" use="required">
-            <xs:simpleType>
-              <xs:restriction base="xs:NMTOKEN">
-                <xs:enumeration value="3"/>
-                <xs:enumeration value="0"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:attribute>
-        </xs:extension>
-      </xs:simpleContent>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="max">
-    <xs:complexType>
-      <xs:simpleContent>
-        <xs:extension base="xs:string">
-          <xs:attribute name="flag" use="required">
-            <xs:simpleType>
-              <xs:restriction base="xs:NMTOKEN">
-                <xs:enumeration value="3"/>
-                <xs:enumeration value="0"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:attribute>
-        </xs:extension>
-      </xs:simpleContent>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="longitude" type="xs:string"/>
-  <xs:element name="latitude" type="xs:string"/>
-  <xs:element name="crx_vn" type="xs:string"/>
-  <xs:element name="avg">
-    <xs:complexType>
-      <xs:simpleContent>
-        <xs:extension base="xs:string">
-          <xs:attribute name="flag" use="required">
-            <xs:simpleType>
-              <xs:restriction base="xs:NMTOKEN">
-                <xs:enumeration value="3"/>
-                <xs:enumeration value="0"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:attribute>
-        </xs:extension>
-      </xs:simpleContent>
-    </xs:complexType>
-  </xs:element>
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:import namespace="http://www.w3.org/XML/1998/namespace"/>
+	<xs:element name="wbanno">
+		<xs:complexType mixed="true"/>
+	</xs:element>
+	<xs:element name="utc_t">
+		<xs:complexType mixed="true"/>
+	</xs:element>
+	<xs:element name="utc_d">
+		<xs:complexType mixed="true"/>
+	</xs:element>
+	<xs:element name="temp">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="avg"/>
+				<xs:element ref="hr"/>
+				<xs:element ref="max"/>
+				<xs:element ref="min"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="t_50">
+		<xs:complexType mixed="true"/>
+	</xs:element>
+	<xs:element name="t_5">
+		<xs:complexType mixed="true"/>
+	</xs:element>
+	<xs:element name="t_20">
+		<xs:complexType mixed="true"/>
+	</xs:element>
+	<xs:element name="t_100">
+		<xs:complexType mixed="true"/>
+	</xs:element>
+	<xs:element name="t_10">
+		<xs:complexType mixed="true"/>
+	</xs:element>
+	<xs:element name="sur">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="avg"/>
+				<xs:element ref="max"/>
+				<xs:element ref="min"/>
+			</xs:sequence>
+			<xs:attribute name="type" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="C"/>
+						<xs:enumeration value="R"/>
+						<xs:enumeration value="U"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="station">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="wbanno"/>
+				<xs:element ref="longitude"/>
+				<xs:element ref="latitude"/>
+				<xs:element ref="set" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="solar">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="avg"/>
+				<xs:element ref="max"/>
+				<xs:element ref="min"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="soil">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="m_50"/>
+				<xs:element ref="m_100"/>
+				<xs:element ref="t_5"/>
+				<xs:element ref="t_10"/>
+				<xs:element ref="t_20"/>
+				<xs:element ref="t_50"/>
+				<xs:element ref="t_100"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="set">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="utc_d"/>
+				<xs:element ref="utc_t"/>
+				<xs:element ref="dl_vn"/>
+				<xs:element ref="temp"/>
+				<xs:element ref="solar"/>
+				<xs:element ref="sur"/>
+				<xs:element ref="rh"/>
+				<xs:element ref="soil"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="rh">
+		<xs:complexType mixed="true">
+			<xs:attribute name="flag">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+						<xs:enumeration value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="min">
+		<xs:complexType mixed="true">
+			<xs:attribute name="flag">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+						<xs:enumeration value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="max">
+		<xs:complexType mixed="true">
+			<xs:attribute name="flag">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+						<xs:enumeration value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="m_50">
+		<xs:complexType mixed="true"/>
+	</xs:element>
+	<xs:element name="m_100">
+		<xs:complexType mixed="true"/>
+	</xs:element>
+	<xs:element name="longitude">
+		<xs:complexType mixed="true"/>
+	</xs:element>
+	<xs:element name="latitude">
+		<xs:complexType mixed="true"/>
+	</xs:element>
+	<xs:element name="hr">
+		<xs:complexType mixed="true"/>
+	</xs:element>
+	<xs:element name="dl_vn">
+		<xs:complexType mixed="true"/>
+	</xs:element>
+	<xs:element name="avg">
+		<xs:complexType mixed="true">
+			<xs:attribute name="flag">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+						<xs:enumeration value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
 </xs:schema>

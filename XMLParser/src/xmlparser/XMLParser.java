@@ -37,6 +37,7 @@ public class XMLParser {
 
                     writer.write(
                             "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+                            + "<?xml-stylesheet type=\"text/xsl\" href=\"CRNH0203-2013-CO_Dinosaur_2_E.xsl\"?>\n"
                             + "<!DOCTYPE station SYSTEM \"CRNH0203-2013-CO_Dinosaur_2_E.dtd\">\n"
                             + "<!--\n"
                             + "- Documentation for arbitrary element names\n"

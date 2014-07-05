@@ -36,7 +36,7 @@
 	<xsl:template match="rh">
 		<xsl:variable name="humidity" select="."/>
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="-100 -100 200 200" width="200" height="200">
-				<circle r="{$humidity}" fill="#B03"/>
+				<circle r="{$humidity}" fill="#009DE0"/>
 			</svg>
 	</xsl:template>
 </xsl:stylesheet>

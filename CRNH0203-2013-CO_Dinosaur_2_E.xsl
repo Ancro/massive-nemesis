@@ -3,6 +3,7 @@
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml">
 			<body>
+				<h1>Luftfeuchtigkeit pro Stunde in Dinosaur</h1>
 				<xsl:apply-templates/>
 			</body>
 		</html>
@@ -35,8 +36,8 @@
 	</xsl:template>
 	<xsl:template match="rh">
 		<xsl:variable name="humidity" select="."/>
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="-100 -100 200 200" width="200" height="200">
-				<circle r="{$humidity}" fill="#009DE0"/>
+			<svg width="5" height="{$humidity}">
+				<rect width="5" height="{$humidity}" style="fill:#009DE0;stroke-width:1;stroke:rgb(0,0,0)" />
 			</svg>
 	</xsl:template>
 </xsl:stylesheet>

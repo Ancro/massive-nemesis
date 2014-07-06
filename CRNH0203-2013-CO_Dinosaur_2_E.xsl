@@ -3,7 +3,7 @@
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml">
 			<body>
-				<h1>Luftfeuchtigkeit pro Stunde in Dinosaur</h1>
+				<h1 style="text-align:center">Luftfeuchtigkeit pro Stunde in Dinosaur</h1>
 				<xsl:apply-templates/>
 			</body>
 		</html>

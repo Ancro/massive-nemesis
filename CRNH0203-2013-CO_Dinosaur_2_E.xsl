@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+<xsl:stylesheet version="2.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml">
 			<body>
@@ -36,8 +36,10 @@
 	</xsl:template>
 	<xsl:template match="rh">
 		<xsl:variable name="humidity" select="."/>
-			<svg width="5" height="{$humidity}">
-				<rect width="5" height="{$humidity}" style="fill:#009DE0;stroke-width:1;stroke:rgb(0,0,0)" />
+			<svg width="{$humidity * 5}" height="12">
+				<rect width="{$humidity * 5}" height="12" style="fill:#009DE0;stroke-width:1;stroke:rgb(0,0,0)" />			
 			</svg>
+			<xsl:apply-templates/>
+			<div></div>
 	</xsl:template>
 </xsl:stylesheet>

@@ -1,0 +1,22 @@
+body {
+	font-family: "Lucida Grande", Helvetica, Arial, "MS Trebuchet", sans-serif;
+}
+
+h3.desc {
+	border: 1px solid gray;
+}
+
+.key_desc, .value_desc {
+	margin-right:	0.5em;
+}
+
+svg {
+	border: 1px solid red;
+}
+
+text.desc {
+	font-family: Arial, "MS Trebuchet", sans-serif;
+	font-size: 5pt;
+	text-anchor:	middle;
+	baseline-shift:	-15;
+}

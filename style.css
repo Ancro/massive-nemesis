@@ -1,8 +1,10 @@
 /*
  * Test border
  */
-.border {
-	border: 1px solid red;
+div.graph, div#caption {
+	border: 1px solid gray;
+	border-top: 0;
+/*	border: 1px solid red;*/
 }
 
 body {
@@ -11,6 +13,7 @@ body {
 
 h3.desc {
 	border: 1px solid gray;
+	margin: 0;
 }
 
 .key_desc, .value_desc {
@@ -23,14 +26,16 @@ div.graph {
 }
 
 svg {
-	height: 200px;
+	height: 150px;
 	width: 16016px;
 }
 
 text.desc {
-	font-size: 5pt;
+	baseline-shift: -16;
+	fill: #FFF;
+	font-size: 8pt;
 	text-anchor: middle;
-	baseline-shift: -15;
+	writing-mode: tb;
 }
 
 #caption {

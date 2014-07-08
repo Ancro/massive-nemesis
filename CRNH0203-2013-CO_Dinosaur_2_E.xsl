@@ -22,27 +22,27 @@
 			<span class="key_desc">LAT:</span><span class="value_desc"><xsl:value-of select="latitude"/>;</span>
 			<span class="key_desc">LON:</span><span class="value_desc"><xsl:value-of select="longitude"/></span>
 		</h3>
-		<div class="graph border">
+		<div class="graph">
 			<svg xmlns="http://www.w3.org/2000/svg">
 				<xsl:for-each select="set/rh">
-					<rect x="{position() * 16}" y="{175 - .}" height="{.}" width="15" fill="#009DE0"/>
-					<text x="{position() * 16 + 7.5}" y="20" class="desc">
-						<xsl:value-of select="."/> <!--Text funktioniert nocht nicht, dehalb 0 als dummy-->
+					<rect x="{position() * 16}" y="{125 - .}" height="{.}" width="15" fill="#009DE0"/>
+					<text x="{position() * 16 + 24}" y="118" class="desc">
+						<xsl:value-of select="."/>
 					</text>
 				</xsl:for-each>
 			</svg>
 		</div>
-		<div class="graph border">
+		<div class="graph">
 			<svg xmlns="http://www.w3.org/2000/svg">
 				<xsl:for-each select="set/temp/hr">
-					<rect x="{position() * 16}" y="{75 - .}" height="{. + 100}" width="15" fill="#FF7920"/>
-					<text x="{position() * 16 + 7.5}" y="20" class="desc">
-						<xsl:value-of select="."/> <!--Text funktioniert nocht nicht, deshalb 0 als dummy-->
+					<rect x="{position() * 16}" y="{25 - .}" height="{. + 100}" width="15" fill="#FF7920"/>
+					<text x="{position() * 16 + 24}" y="110" class="desc">
+						<xsl:value-of select="."/>
 					</text>
 				</xsl:for-each>
 			</svg>
 		</div>
-		<div id="caption" class="border">
+		<div id="caption">
 			Legende:
 			<span class="color" id="humidity">
 				Luftfeuchtigkeit

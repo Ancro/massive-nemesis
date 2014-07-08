@@ -19,6 +19,12 @@ h3.desc {
 
 div.graph {
 	padding: 0 15px 0 0;
+	overflow: scroll;
+}
+
+svg {
+	height: 200px;
+	width: 16016px;
 }
 
 text.desc {

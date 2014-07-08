@@ -23,7 +23,7 @@
 			<span class="key_desc">LON:</span><span class="value_desc"><xsl:value-of select="longitude"/></span>
 		</h3>
 		<div class="graph border">
-			<svg height="200" xmlns="http://www.w3.org/2000/svg">
+			<svg xmlns="http://www.w3.org/2000/svg">
 				<xsl:for-each select="set/rh">
 					<rect x="{position() * 16}" y="{175 - .}" height="{.}" width="15" fill="#009DE0"/>
 					<text x="{position() * 16 + 7.5}" y="20" class="desc">
@@ -33,7 +33,7 @@
 			</svg>
 		</div>
 		<div class="graph border">
-			<svg height="200" xmlns="http://www.w3.org/2000/svg">
+			<svg xmlns="http://www.w3.org/2000/svg">
 				<xsl:for-each select="set/temp/hr">
 					<rect x="{position() * 16}" y="{75 - .}" height="{. + 100}" width="15" fill="#FF7920"/>
 					<text x="{position() * 16 + 7.5}" y="20" class="desc">

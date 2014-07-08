@@ -44,12 +44,12 @@
 					<text x="{position()*25 - 10}" y="-70" style="font-family:arial;text-anchor:middle;baseline-shift:-15;">
 						Legende:
 					</text>
-					<rect x="{position()*25}" y="-50" height="25" width="25" fill="#009DE0"/>
-					<rect x="{position()*25}" y="0" height="25" width="25" fill="#FF7920"/>
-					<text x="{position()*25 + 30}" y="-30" style="font-family:arial;baseline-shift:-15;">
+					<rect x="{position()*25}" y="-60" height="25" width="25" fill="#009DE0"/>
+					<rect x="{position()*25}" y="-20" height="25" width="25" fill="#FF7920"/>
+					<text x="{position()*25 + 30}" y="-40" style="font-family:arial;baseline-shift:-15;">
 						Luftfeuchtigkeit
 					</text>
-					<text x="{position()*25 + 30}" y="20" style="font-family:arial;baseline-shift:-15;">
+					<text x="{position()*25 + 30}" y="0" style="font-family:arial;baseline-shift:-15;">
 						Durchschnittstemperatur
 					</text>
 			</g>

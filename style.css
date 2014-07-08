@@ -1,3 +1,10 @@
+/*
+ * Test border
+ */
+.border {
+	border: 1px solid red;
+}
+
 body {
 	font-family: "Lucida Grande", Helvetica, Arial, "MS Trebuchet", sans-serif;
 }
@@ -7,16 +14,33 @@ h3.desc {
 }
 
 .key_desc, .value_desc {
-	margin-right:	0.5em;
+	margin-right: 0.5em;
 }
 
-svg {
-	border: 1px solid red;
+div.graph {
+	padding: 0 15px 0 0;
 }
 
 text.desc {
-	font-family: Arial, "MS Trebuchet", sans-serif;
 	font-size: 5pt;
-	text-anchor:	middle;
-	baseline-shift:	-15;
+	text-anchor: middle;
+	baseline-shift: -15;
+}
+
+#caption {
+	padding: 15px;
+}
+
+.color {
+	color: #FFF;
+	margin: 5px;
+	padding: 5px;
+}
+
+#humidity {
+	background-color: #009DE0;
+}
+
+#temperature {
+	background-color: #FF7920;
 }

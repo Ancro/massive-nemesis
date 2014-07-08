@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="2.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
 
-	<xsl:strip-spaces/>
+<xsl:strip-spaces/>
 
 	<xsl:template match="/">
 		<xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html&gt;</xsl:text>
@@ -22,7 +22,7 @@
 			<span class="key_desc">LAT:</span><span class="value_desc"><xsl:value-of select="latitude"/>;</span>
 			<span class="key_desc">LON:</span><span class="value_desc"><xsl:value-of select="longitude"/></span>
 		</h3>
-		<div>
+		<div class="graph border">
 			<svg height="200" xmlns="http://www.w3.org/2000/svg">
 				<xsl:for-each select="set/rh">
 					<rect x="{position() * 16}" y="{175 - .}" height="{.}" width="15" fill="#009DE0"/>
@@ -32,7 +32,7 @@
 				</xsl:for-each>
 			</svg>
 		</div>
-		<div>
+		<div class="graph border">
 			<svg height="200" xmlns="http://www.w3.org/2000/svg">
 				<xsl:for-each select="set/temp/hr">
 					<rect x="{position() * 16}" y="{75 - .}" height="{. + 100}" width="15" fill="#FF7920"/>
@@ -42,20 +42,14 @@
 				</xsl:for-each>
 			</svg>
 		</div>
-		<div>
-			<svg height="200" xmlns="http://www.w3.org/2000/svg">
-				<text x="25" y="0" class="desc">
-					Legende:
-				</text>
-				<rect x="25" y="60" height="25" width="25" fill="#009DE0"/>
-				<rect x="{position() * 16}" y="20" height="25" width="25" fill="#FF7920"/>
-				<text x="{position() * 16 + 30}" y="40" class="desc">
-					Luftfeuchtigkeit
-				</text>
-				<text x="{position()*25 + 30}" y="0" class="desc">
-					Durchschnittstemperatur
-				</text>
-			</svg>
+		<div id="caption" class="border">
+			Legende:
+			<span class="color" id="humidity">
+				Luftfeuchtigkeit
+			</span>
+			<span class="color" id="temperature">
+				Durchschnittstemperatur
+			</span>
 		</div>
 	</xsl:template>
 

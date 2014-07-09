@@ -8,12 +8,12 @@ div.graph, div#caption {
 }
 
 body {
-	font-family: "Lucida Grande", Helvetica, Arial, "MS Trebuchet", sans-serif;
+	font-family: Helvetica, Arial, "MS Trebuchet", sans-serif;
 }
 
 h1, h3.desc {
-	text-align: center;
 	font-weight: 100;
+	text-align: center;
 }
 
 h3.desc {
@@ -26,13 +26,13 @@ h3.desc {
 }
 
 div.graph {
-	padding: 0 15px 0 0;
 	overflow-x: scroll;
+	overflow-y: hidden;
 }
 
 svg {
-	height: 150px;
-	width: 16016px;
+	height: 125px;
+	margin: -3px 0px;
 }
 
 text.desc {
@@ -44,13 +44,14 @@ text.desc {
 }
 
 #caption {
-	padding: 15px;
+	padding: 10px;
+	line-height: 220%;
 }
 
 .color {
 	color: #FFF;
-	margin: 5px;
-	padding: 5px;
+	margin: 0.4%;
+	padding: 0.4%;
 }
 
 #humidity {
@@ -59,4 +60,10 @@ text.desc {
 
 #temperature {
 	background-color: #FF7920;
+}
+
+#numberOfUpdates {
+	display: block;
+	float: right;
+	text-align: right;
 }

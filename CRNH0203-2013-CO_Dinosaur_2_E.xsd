@@ -21,8 +21,8 @@
 			<xs:element name="utc_d" type="emptyType"/>
 			<xs:element name="dl_vn" type="emptyType"/>
 			<xs:element name="temp" type="tempType"/>
-			<xs:element name="solar" type="solsurType"/>
-			<xs:element name="sur" type="solsurType"/>
+			<xs:element name="solar" type="solarType"/>
+			<xs:element name="sur" type="surType"/>
 			<xs:element name="rh" type="flagType"/>
 			<xs:element name="soil" type="soilType"/>
 		</xs:sequence>
@@ -37,12 +37,29 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="solsurType">
+	<xs:complexType name="solarType">
 		<xs:sequence>
 			<xs:element name="avg" type="flagType"/>
 			<xs:element name="max" type="flagType"/>
 			<xs:element name="min" type="flagType"/>
 		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="surType">
+		<xs:sequence>
+			<xs:element name="avg" type="flagType"/>
+			<xs:element name="max" type="flagType"/>
+			<xs:element name="min" type="flagType"/>
+		</xs:sequence>
+		<xs:attribute name="type" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="C"/>
+					<xs:enumeration value="R"/>
+					<xs:enumeration value="U"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
 	</xs:complexType>
 
 	<xs:complexType name="flagType" mixed="true">

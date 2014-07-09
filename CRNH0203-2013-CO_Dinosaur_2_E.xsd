@@ -2,9 +2,50 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 	<xs:import namespace="http://www.w3.org/XML/1998/namespace"/>
 	
-	<xs:complexType name="LeerType" mixed="true"/>
+	<xs:element name="station" type="rootType"/>
 
-	<xs:complexType name="MaxType" mixed="true">
+	<xs:complexType name="rootType">
+		<xs:sequence>
+			<xs:element name="wbanno" type="xs:integer"/>
+			<xs:element name="longitude" type="emptyType"/>
+			<xs:element name="latitude" type="emptyType"/>
+			<xs:element name="set" maxOccurs="unbounded" type="setType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="emptyType" mixed="true"/>
+
+	<xs:complexType name="setType">
+		<xs:sequence>
+			<xs:element name="utc_t" type="xs:integer"/>
+			<xs:element name="utc_d" type="emptyType"/>
+			<xs:element name="dl_vn" type="emptyType"/>
+			<xs:element name="temp" type="tempType"/>
+			<xs:element name="solar" type="solsurType"/>
+			<xs:element name="sur" type="solsurType"/>
+			<xs:element name="rh" type="flagType"/>
+			<xs:element name="soil" type="soilType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="tempType">
+		<xs:sequence>
+			<xs:element name="avg" type="emptyType"/>
+			<xs:element name="hr" type="emptyType"/>
+			<xs:element name="max" type="emptyType"/>
+			<xs:element name="min" type="emptyType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="solsurType">
+		<xs:sequence>
+			<xs:element name="avg" type="flagType"/>
+			<xs:element name="max" type="flagType"/>
+			<xs:element name="min" type="flagType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="flagType" mixed="true">
 		<xs:attribute name="flag">
 			<xs:simpleType>
 				<xs:restriction base="xs:NMTOKEN">
@@ -16,135 +57,16 @@
 			</xs:simpleType>
 		</xs:attribute>
 	</xs:complexType>
-	
-	<xs:complexType name="MinType" mixed="true">
-		<xs:attribute name="flag">
-			<xs:simpleType>
-				<xs:restriction base="xs:NMTOKEN">
-					<xs:enumeration value="0"/>
-					<xs:enumeration value="1"/>
-					<xs:enumeration value="2"/>
-					<xs:enumeration value="3"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
+
+	<xs:complexType name="soilType" mixed="true">
+		<xs:sequence>
+			<xs:element name="m_50" type="emptyType"/>
+			<xs:element name="m_100" type="emptyType"/>
+			<xs:element name="t_5" type="emptyType"/>
+			<xs:element name="t_10" type="emptyType"/>
+			<xs:element name="t_20" type="emptyType"/>
+			<xs:element name="t_50" type="emptyType"/>
+			<xs:element name="t_100" type="emptyType"/>
+		</xs:sequence>
 	</xs:complexType>
-	
-	<xs:complexType name="AvgType" mixed="true">
-		<xs:attribute name="flag">
-			<xs:simpleType>
-				<xs:restriction base="xs:NMTOKEN">
-					<xs:enumeration value="0"/>
-					<xs:enumeration value="1"/>
-					<xs:enumeration value="2"/>
-					<xs:enumeration value="3"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-	</xs:complexType>
-	
-	<xs:complexType name="RhType">
-		<xs:attribute name="flag">
-			<xs:simpleType>
-				<xs:restriction base="xs:NMTOKEN">
-					<xs:enumeration value="0"/>
-					<xs:enumeration value="1"/>
-					<xs:enumeration value="2"/>
-					<xs:enumeration value="3"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-	</xs:complexType>
-	
-	<xs:element name="utc_t" type="LeerType"/>
-	<xs:element name="utc_d" type="LeerType"/>
-	<xs:element name="temp">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="avg" type="LeerType"/>
-				<xs:element name="hr" type="LeerType"/>
-				<xs:element name="max" type="LeerType"/>
-				<xs:element name="min" type="LeerType"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="t_50" type="LeerType"/>
-	<xs:element name="t_5" type="LeerType"/>
-	<xs:element name="t_20" type="LeerType"/>
-	<xs:element name="t_100" type="LeerType"/>
-	<xs:element name="t_10" type="LeerType"/>
-	<xs:element name="sur">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="avg" type="LeerType"/>
-				<xs:element name="max" type="LeerType"/>
-				<xs:element name="min" type="LeerType"/>
-			</xs:sequence>
-			<xs:attribute name="type" use="required">
-				<xs:simpleType>
-					<xs:restriction base="xs:NMTOKEN">
-						<xs:enumeration value="C"/>
-						<xs:enumeration value="R"/>
-						<xs:enumeration value="U"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:attribute>
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="station">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="wbanno" type="LeerType"/>
-				<xs:element name="longitude" type="LeerType"/>
-				<xs:element name="latitude" type="LeerType"/>
-				<xs:element name="set" maxOccurs="unbounded" type="LeerType"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="solar">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="avg" type="LeerType"/>
-				<xs:element name="max" type="LeerType"/>
-				<xs:element name="min" type="LeerType"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="soil">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="m_50" type="LeerType"/>
-				<xs:element name="m_100" type="LeerType"/>
-				<xs:element name="t_5" type="LeerType"/>
-				<xs:element name="t_10" type="LeerType"/>
-				<xs:element name="t_20" type="LeerType"/>
-				<xs:element name="t_50" type="LeerType"/>
-				<xs:element name="t_100" type="LeerType"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="set">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="utc_d" type="LeerType"/>
-				<xs:element name="utc_t" type="LeerType"/>
-				<xs:element name="dl_vn" type="LeerType"/>
-				<xs:element name="temp" type="LeerType"/>
-				<xs:element name="solar" type="LeerType"/>
-				<xs:element name="sur" type="LeerType"/>
-				<xs:element name="rh" type="LeerType"/>
-				<xs:element name="soil" type="LeerType"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="rh" type="RhType"/>		
-	<xs:element name="min" type="MinType"/>
-	<xs:element name="max" type="MaxType"/>
-	<xs:element name="m_50" type="LeerType"/>
-	<xs:element name="m_100" type="LeerType"/>
-	<xs:element name="longitude" type="LeerType"/>
-	<xs:element name="latitude" type="LeerType"/>
-	<xs:element name="hr" type="LeerType"/>
-	<xs:element name="dl_vn" type="LeerType"/>
-	<xs:element name="avg" type="AvgType"/>
 </xs:schema>

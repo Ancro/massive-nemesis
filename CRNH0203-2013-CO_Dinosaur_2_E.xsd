@@ -3,6 +3,58 @@
 	<xs:import namespace="http://www.w3.org/XML/1998/namespace"/>
 	
 	<xs:complexType name="LeerType" mixed="true"/>
+
+	<xs:complexType name="MaxType" mixed="true">
+		<xs:attribute name="flag">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="0"/>
+					<xs:enumeration value="1"/>
+					<xs:enumeration value="2"/>
+					<xs:enumeration value="3"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	
+	<xs:complexType name="MinType" mixed="true">
+		<xs:attribute name="flag">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="0"/>
+					<xs:enumeration value="1"/>
+					<xs:enumeration value="2"/>
+					<xs:enumeration value="3"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	
+	<xs:complexType name="AvgType" mixed="true">
+		<xs:attribute name="flag">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="0"/>
+					<xs:enumeration value="1"/>
+					<xs:enumeration value="2"/>
+					<xs:enumeration value="3"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	
+	<xs:complexType name="RhType">
+		<xs:attribute name="flag">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="0"/>
+					<xs:enumeration value="1"/>
+					<xs:enumeration value="2"/>
+					<xs:enumeration value="3"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
 	
 	<xs:element name="utc_t" type="LeerType"/>
 	<xs:element name="utc_d" type="LeerType"/>
@@ -85,58 +137,14 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="rh" type="LeerType">		
-		<xs:attribute name="flag">
-			<xs:simpleType>
-				<xs:restriction base="xs:NMTOKEN">
-					<xs:enumeration value="0"/>
-					<xs:enumeration value="1"/>
-					<xs:enumeration value="2"/>
-					<xs:enumeration value="3"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-	</xs:element>
-	<xs:element name="min" type="LeerType">
-		<xs:attribute name="flag">
-			<xs:simpleType>
-				<xs:restriction base="xs:NMTOKEN">
-					<xs:enumeration value="0"/>
-					<xs:enumeration value="1"/>
-					<xs:enumeration value="2"/>
-					<xs:enumeration value="3"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-	</xs:element>
-	<xs:element name="max" type="LeerType">
-		<xs:attribute name="flag">
-			<xs:simpleType>
-				<xs:restriction base="xs:NMTOKEN">
-					<xs:enumeration value="0"/>
-					<xs:enumeration value="1"/>
-					<xs:enumeration value="2"/>
-					<xs:enumeration value="3"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-	</xs:element>
+	<xs:element name="rh" type="RhType"/>		
+	<xs:element name="min" type="MinType"/>
+	<xs:element name="max" type="MaxType"/>
 	<xs:element name="m_50" type="LeerType"/>
 	<xs:element name="m_100" type="LeerType"/>
 	<xs:element name="longitude" type="LeerType"/>
 	<xs:element name="latitude" type="LeerType"/>
 	<xs:element name="hr" type="LeerType"/>
 	<xs:element name="dl_vn" type="LeerType"/>
-	<xs:element name="avg" type="LeerType">
-		<xs:attribute name="flag">
-			<xs:simpleType>
-				<xs:restriction base="xs:NMTOKEN">
-					<xs:enumeration value="0"/>
-					<xs:enumeration value="1"/>
-					<xs:enumeration value="2"/>
-					<xs:enumeration value="3"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-	</xs:element>
+	<xs:element name="avg" type="AvgType"/>
 </xs:schema>

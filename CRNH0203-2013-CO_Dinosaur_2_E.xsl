@@ -121,6 +121,12 @@
 			<span class="color humidity">
 				Luftfeuchtigkeit
 			</span>
+			<span class="color DINOSAUR">
+				<svg width="15" height="10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<image x="0" y="0" width="15" height="10" xlink:href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Sauroposeidon_dinosaur.svg/15px-Sauroposeidon_dinosaur.svg.png"/>
+				</svg>
+				Fehlerhafter Datensatz
+			</span>
 			<span id="numberOfUpdates">
 				Datensätze: <xsl:value-of select="count(//set)"/>
 			</span>

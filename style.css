@@ -98,8 +98,15 @@ line.freezing_point {
 	fill: #BAB2A8;
 }
 
+.DINOSAUR {
+	border: 1px solid #999;
+	color: #000;
+	margin: 0.3%;
+	padding: 0.3%;
+}
+
 #numberOfUpdates {
 	display: block;
-	float: right;
+/*	float: right;*/
 	text-align: right;
 }

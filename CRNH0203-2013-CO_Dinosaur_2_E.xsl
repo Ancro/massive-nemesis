@@ -10,14 +10,14 @@
 				<link rel="stylesheet" type="text/css" href="style.css"/>
 			</head>
 			<body>
-				<h1 style="text-align:center">Dinosaur, Colorado</h1>
+				<h1>Dinosaur, Colorado</h1>
 				<xsl:apply-templates/>
 			</body>
 		</html>
 	</xsl:template>
 
 	<xsl:template match="station">
-		<h3 class="desc" style="text-align:center">
+		<h3 class="desc">
 			<span class="key_desc">Stationsnummer:</span><span class="value_desc"><xsl:value-of select="wbanno"/>;</span>
 			<span class="key_desc">LAT:</span><span class="value_desc"><xsl:value-of select="latitude"/>;</span>
 			<span class="key_desc">LON:</span><span class="value_desc"><xsl:value-of select="longitude"/></span>

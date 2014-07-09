@@ -44,44 +44,59 @@
 				</svg>
 			</div>
 			<div class="graph">
-				<svg width="{count(//set) * 16 + 1}" xmlns="http://www.w3.org/2000/svg">
+				<svg width="{count(//set) * 16 + 1}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<xsl:for-each select="set/temp/hr">
-						<xsl:if test=". > -9999">
-							<xsl:variable name="temp"><xsl:value-of select="."/></xsl:variable>
-							<rect x="{position() * 16 - 15}" y="{100 - .}" height="{. + 50}" width="15" class="temperature"/>
-							<text x="{position() * 16 - 8}" y="146" class="desc">
-								<xsl:value-of select="floor($temp)"/>
-							</text>
-						</xsl:if>
+						<xsl:choose>
+							<xsl:when test=". > -9999">
+								<xsl:variable name="temp"><xsl:value-of select="."/></xsl:variable>
+								<rect x="{position() * 16 - 15}" y="{100 - .}" height="{. + 50}" width="15" class="temperature"/>
+								<text x="{position() * 16 - 8}" y="146" class="desc">
+									<xsl:value-of select="floor($temp)"/>
+								</text>
+							</xsl:when>
+							<xsl:otherwise>
+								<image x="{position() * 16 - 15}" y="141" width="15" height="10" xlink:href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Sauroposeidon_dinosaur.svg/15px-Sauroposeidon_dinosaur.svg.png"/>
+							</xsl:otherwise>
+						</xsl:choose>
 					</xsl:for-each>
 					<text x="5" y="95" class="freezing_point">Nullpunkt</text>
 					<line x1="0" y1="100" x2="{count(//set) * 16 + 1}" y2="100" class="freezing_point"/>
 				</svg>
 			</div>
 			<div class="graph">
-				<svg width="{count(//set) * 16 + 1}" xmlns="http://www.w3.org/2000/svg">
+				<svg width="{count(//set) * 16 + 1}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<xsl:for-each select="set/sur/avg">
-						<xsl:if test=". > -9999">
-							<xsl:variable name="sur_temp"><xsl:value-of select="."/></xsl:variable>
-							<rect x="{position() * 16 - 15}" y="{100 - .}" height="{. + 50}" width="15" class="surface"/>
-							<text x="{position() * 16 - 8}" y="146" class="desc">
-								<xsl:value-of select="floor($sur_temp)"/>
-							</text>
-						</xsl:if>
+						<xsl:choose>
+							<xsl:when test=". > -9999">
+								<xsl:variable name="sur_temp"><xsl:value-of select="."/></xsl:variable>
+								<rect x="{position() * 16 - 15}" y="{100 - .}" height="{. + 50}" width="15" class="surface"/>
+								<text x="{position() * 16 - 8}" y="146" class="desc">
+									<xsl:value-of select="floor($sur_temp)"/>
+								</text>
+							</xsl:when>
+							<xsl:otherwise>
+								<image x="{position() * 16 - 15}" y="141" width="15" height="10" xlink:href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Sauroposeidon_dinosaur.svg/15px-Sauroposeidon_dinosaur.svg.png"/>
+							</xsl:otherwise>
+						</xsl:choose>
 					</xsl:for-each>
 					<text x="5" y="95" class="freezing_point">Nullpunkt</text>
 					<line x1="0" y1="100" x2="{count(//set) * 16 + 1}" y2="100" class="freezing_point"/>
 				</svg>
 			</div>
 			<div class="graph">
-				<svg width="{count(//set) * 16 + 1}" xmlns="http://www.w3.org/2000/svg">
+				<svg width="{count(//set) * 16 + 1}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<xsl:for-each select="set/rh">
-						<xsl:if test=". > -9999">
-							<rect x="{position() * 16 - 15}" y="{150 - .}" height="{.}" width="15" class="humidity"/>
-							<text x="{position() * 16 - 8}" y="146" class="desc">
-								<xsl:value-of select="."/>
-							</text>
-						</xsl:if>
+						<xsl:choose>
+							<xsl:when test=". > -9999">
+								<rect x="{position() * 16 - 15}" y="{150 - .}" height="{.}" width="15" class="humidity"/>
+								<text x="{position() * 16 - 8}" y="146" class="desc">
+									<xsl:value-of select="."/>
+								</text>
+							</xsl:when>
+							<xsl:otherwise>
+								<image x="{position() * 16 - 15}" y="141" width="15" height="10" xlink:href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Sauroposeidon_dinosaur.svg/15px-Sauroposeidon_dinosaur.svg.png"/>
+							</xsl:otherwise>
+						</xsl:choose>
 					</xsl:for-each>
 				</svg>
 			</div>

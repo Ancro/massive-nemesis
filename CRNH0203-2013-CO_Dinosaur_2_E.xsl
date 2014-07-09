@@ -22,25 +22,31 @@
 			<span class="key_desc">LAT:</span><span class="value_desc"><xsl:value-of select="latitude"/>;</span>
 			<span class="key_desc">LON:</span><span class="value_desc"><xsl:value-of select="longitude"/></span>
 		</h3>
-		<div class="graph">
-			<svg width="{count(//set) * 16 + 1}" xmlns="http://www.w3.org/2000/svg">
-				<xsl:for-each select="set/rh">
-					<rect x="{position() * 16 - 15}" y="{125 - .}" height="{.}" width="15" fill="#009DE0"/>
-					<text x="{position() * 16 + 8}" y="118" class="desc">
-						<xsl:value-of select="."/>
-					</text>
-				</xsl:for-each>
-			</svg>
-		</div>
-		<div class="graph">
-			<svg width="{count(//set) * 16 + 1}" xmlns="http://www.w3.org/2000/svg">
-				<xsl:for-each select="set/temp/hr">
-					<rect x="{position() * 16 - 15}" y="{25 - .}" height="{. + 100}" width="15" fill="#FF7920"/>
-					<text x="{position() * 16 + 8}" y="110" class="desc">
-						<xsl:value-of select="."/>
-					</text>
-				</xsl:for-each>
-			</svg>
+		<div id="graphs">
+			<div class="graph">
+				<svg width="{count(//set) * 16 + 1}" xmlns="http://www.w3.org/2000/svg">
+					<xsl:for-each select="set/rh">
+						<xsl:if test=". > -9999">
+							<rect x="{position() * 16 - 15}" y="{150 - .}" height="{.}" width="15" fill="#009DE0"/>
+							<text x="{position() * 16 - 8}" y="130" class="desc">
+								<xsl:value-of select="."/>
+							</text>
+						</xsl:if>
+					</xsl:for-each>
+				</svg>
+			</div>
+			<div class="graph">
+				<svg width="{count(//set) * 16 + 1}" xmlns="http://www.w3.org/2000/svg">
+					<xsl:for-each select="set/temp/hr">
+						<xsl:if test=". > -9999">
+							<rect x="{position() * 16 - 15}" y="{50 - .}" height="{. + 100}" width="15" fill="#FF7920"/>
+							<text x="{position() * 16 - 8}" y="130" class="desc">
+								<xsl:value-of select="."/>
+							</text>
+						</xsl:if>
+					</xsl:for-each>
+				</svg>
+			</div>
 		</div>
 		<div id="caption">
 			Legende:

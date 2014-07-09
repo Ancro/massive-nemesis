@@ -87,4 +87,3 @@ Die Struktur ist zweigeteilt in konstante und variable Informationen. Unter den 
 
 ##### `<soil><t_100>`
 - durchschnittliche Bodentemperatur 100 cm unterhalb der Oberfläche
-

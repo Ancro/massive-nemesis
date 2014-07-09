@@ -27,13 +27,16 @@ h3.desc {
 	overflow-y: hidden;
 }
 
-svg {
-	height: 160px;
+div.time svg {
+	height: 41px;
+}
+
+div.graph svg {
+	height: 150px;
 	margin: -3px 0px;
 }
 
-text.desc {
-	baseline-shift: -16;
+text.desc, text.time {
 	fill: #FFF;
 	font-size: 50%;
 	text-anchor: middle;
@@ -51,12 +54,29 @@ text.desc {
 	padding: 0.4%;
 }
 
-#humidity {
-	background-color: #009DE0;
+.month {
+	background-color: #424242;
+	fill: #424242;
 }
 
-#temperature {
+.day {
+	background-color: #757575;
+	fill: #757575;
+}
+
+.hour {
+	background-color: #CCCCCC;
+	fill: #CCCCCC;
+}
+
+.humidity {
+	background-color: #009DE0;
+	fill: #009DE0;
+}
+
+.temperature {
 	background-color: #FF7920;
+	fill: #FF7920;
 }
 
 #numberOfUpdates {

@@ -47,19 +47,37 @@
 				<svg width="{count(//set) * 16 + 1}" xmlns="http://www.w3.org/2000/svg">
 					<xsl:for-each select="set/temp/hr">
 						<xsl:if test=". > -9999">
-							<rect x="{position() * 16 - 15}" y="{50 - .}" height="{. + 100}" width="15" fill="#FF7920"/>
+							<xsl:variable name="temp"><xsl:value-of select="."/></xsl:variable>
+							<rect x="{position() * 16 - 15}" y="{100 - .}" height="{. + 50}" width="15" class="temperature"/>
 							<text x="{position() * 16 - 8}" y="146" class="desc">
-								<xsl:value-of select="."/>
+								<xsl:value-of select="floor($temp)"/>
 							</text>
 						</xsl:if>
 					</xsl:for-each>
+					<text x="5" y="95" class="freezing_point">Nullpunkt</text>
+					<line x1="0" y1="100" x2="{count(//set) * 16 + 1}" y2="100" class="freezing_point"/>
+				</svg>
+			</div>
+			<div class="graph">
+				<svg width="{count(//set) * 16 + 1}" xmlns="http://www.w3.org/2000/svg">
+					<xsl:for-each select="set/sur/avg">
+						<xsl:if test=". > -9999">
+							<xsl:variable name="sur_temp"><xsl:value-of select="."/></xsl:variable>
+							<rect x="{position() * 16 - 15}" y="{100 - .}" height="{. + 50}" width="15" class="surface"/>
+							<text x="{position() * 16 - 8}" y="146" class="desc">
+								<xsl:value-of select="floor($sur_temp)"/>
+							</text>
+						</xsl:if>
+					</xsl:for-each>
+					<text x="5" y="95" class="freezing_point">Nullpunkt</text>
+					<line x1="0" y1="100" x2="{count(//set) * 16 + 1}" y2="100" class="freezing_point"/>
 				</svg>
 			</div>
 			<div class="graph">
 				<svg width="{count(//set) * 16 + 1}" xmlns="http://www.w3.org/2000/svg">
 					<xsl:for-each select="set/rh">
 						<xsl:if test=". > -9999">
-							<rect x="{position() * 16 - 15}" y="{150 - .}" height="{.}" width="15" fill="#009DE0"/>
+							<rect x="{position() * 16 - 15}" y="{150 - .}" height="{.}" width="15" class="humidity"/>
 							<text x="{position() * 16 - 8}" y="146" class="desc">
 								<xsl:value-of select="."/>
 							</text>
@@ -81,6 +99,9 @@
 			</span>
 			<span class="color temperature">
 				Durchschnittstemperatur
+			</span>
+			<span class="color surface">
+				Durchschnittsbodentemperatur
 			</span>
 			<span class="color humidity">
 				Luftfeuchtigkeit

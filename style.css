@@ -14,11 +14,12 @@ h1, h3.desc {
 h3.desc {
 	border: 1px solid gray;
 	margin: 0;
+	padding: 5px;
 }
 
-.key_desc, .value_desc {
+/*.key_desc, .value_desc {
 	margin-right: 0.5em;
-}
+}*/
 
 #graphs {
 	border-left: 1px solid gray;
@@ -43,6 +44,19 @@ text.desc, text.time {
 /*	writing-mode: tb; Sad panda. ;( */
 }
 
+.freezing_point {
+	stroke: #06143A;
+}
+
+text.freezing_point {
+	stroke-width: 0;
+	font-size: 60%;
+}
+
+line.freezing_point {
+	stroke-width: 0.5;
+}
+
 #caption {
 	padding: 10px;
 	line-height: 220%;
@@ -55,18 +69,18 @@ text.desc, text.time {
 }
 
 .month {
-	background-color: #424242;
-	fill: #424242;
+	background-color: #555;
+	fill: #555;
 }
 
 .day {
-	background-color: #757575;
-	fill: #757575;
+	background-color: #777;
+	fill: #777;
 }
 
 .hour {
-	background-color: #CCCCCC;
-	fill: #CCCCCC;
+	background-color: #CCC;
+	fill: #CCC;
 }
 
 .humidity {
@@ -77,6 +91,11 @@ text.desc, text.time {
 .temperature {
 	background-color: #FF7920;
 	fill: #FF7920;
+}
+
+.surface {
+	background-color: #BAB2A8;
+	fill: #BAB2A8;
 }
 
 #numberOfUpdates {

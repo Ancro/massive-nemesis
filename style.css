@@ -17,9 +17,9 @@ h3.desc {
 	padding: 5px;
 }
 
-/*.key_desc, .value_desc {
+.key_desc, .value_desc {
 	margin-right: 0.5em;
-}*/
+}
 
 #graphs {
 	border-left: 1px solid gray;
@@ -28,11 +28,11 @@ h3.desc {
 	overflow-y: hidden;
 }
 
-div.time svg {
+svg.time {
 	height: 41px;
 }
 
-div.graph svg {
+svg.graph {
 	height: 150px;
 	margin: -3px 0px;
 }

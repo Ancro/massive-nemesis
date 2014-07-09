@@ -1,46 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 	<xs:import namespace="http://www.w3.org/XML/1998/namespace"/>
-	<xs:element name="wbanno">
-		<xs:complexType mixed="true"/>
-	</xs:element>
-	<xs:element name="utc_t">
-		<xs:complexType mixed="true"/>
-	</xs:element>
-	<xs:element name="utc_d">
-		<xs:complexType mixed="true"/>
-	</xs:element>
+	
+	<xs:complexType name="LeerType" mixed="true"/>
+	
+	<xs:element name="utc_t" type="LeerType"/>
+	<xs:element name="utc_d" type="LeerType"/>
 	<xs:element name="temp">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="avg"/>
-				<xs:element ref="hr"/>
-				<xs:element ref="max"/>
-				<xs:element ref="min"/>
+				<xs:element name="avg" type="LeerType"/>
+				<xs:element name="hr" type="LeerType"/>
+				<xs:element name="max" type="LeerType"/>
+				<xs:element name="min" type="LeerType"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="t_50">
-		<xs:complexType mixed="true"/>
-	</xs:element>
-	<xs:element name="t_5">
-		<xs:complexType mixed="true"/>
-	</xs:element>
-	<xs:element name="t_20">
-		<xs:complexType mixed="true"/>
-	</xs:element>
-	<xs:element name="t_100">
-		<xs:complexType mixed="true"/>
-	</xs:element>
-	<xs:element name="t_10">
-		<xs:complexType mixed="true"/>
-	</xs:element>
+	<xs:element name="t_50" type="LeerType"/>
+	<xs:element name="t_5" type="LeerType"/>
+	<xs:element name="t_20" type="LeerType"/>
+	<xs:element name="t_100" type="LeerType"/>
+	<xs:element name="t_10" type="LeerType"/>
 	<xs:element name="sur">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="avg"/>
-				<xs:element ref="max"/>
-				<xs:element ref="min"/>
+				<xs:element name="avg" type="LeerType"/>
+				<xs:element name="max" type="LeerType"/>
+				<xs:element name="min" type="LeerType"/>
 			</xs:sequence>
 			<xs:attribute name="type" use="required">
 				<xs:simpleType>
@@ -56,121 +42,101 @@
 	<xs:element name="station">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="wbanno"/>
-				<xs:element ref="longitude"/>
-				<xs:element ref="latitude"/>
-				<xs:element ref="set" maxOccurs="unbounded"/>
+				<xs:element name="wbanno" type="LeerType"/>
+				<xs:element name="longitude" type="LeerType"/>
+				<xs:element name="latitude" type="LeerType"/>
+				<xs:element name="set" maxOccurs="unbounded" type="LeerType"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="solar">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="avg"/>
-				<xs:element ref="max"/>
-				<xs:element ref="min"/>
+				<xs:element name="avg" type="LeerType"/>
+				<xs:element name="max" type="LeerType"/>
+				<xs:element name="min" type="LeerType"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="soil">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="m_50"/>
-				<xs:element ref="m_100"/>
-				<xs:element ref="t_5"/>
-				<xs:element ref="t_10"/>
-				<xs:element ref="t_20"/>
-				<xs:element ref="t_50"/>
-				<xs:element ref="t_100"/>
+				<xs:element name="m_50" type="LeerType"/>
+				<xs:element name="m_100" type="LeerType"/>
+				<xs:element name="t_5" type="LeerType"/>
+				<xs:element name="t_10" type="LeerType"/>
+				<xs:element name="t_20" type="LeerType"/>
+				<xs:element name="t_50" type="LeerType"/>
+				<xs:element name="t_100" type="LeerType"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="set">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="utc_d"/>
-				<xs:element ref="utc_t"/>
-				<xs:element ref="dl_vn"/>
-				<xs:element ref="temp"/>
-				<xs:element ref="solar"/>
-				<xs:element ref="sur"/>
-				<xs:element ref="rh"/>
-				<xs:element ref="soil"/>
+				<xs:element name="utc_d" type="LeerType"/>
+				<xs:element name="utc_t" type="LeerType"/>
+				<xs:element name="dl_vn" type="LeerType"/>
+				<xs:element name="temp" type="LeerType"/>
+				<xs:element name="solar" type="LeerType"/>
+				<xs:element name="sur" type="LeerType"/>
+				<xs:element name="rh" type="LeerType"/>
+				<xs:element name="soil" type="LeerType"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="rh">
-		<xs:complexType mixed="true">
-			<xs:attribute name="flag">
-				<xs:simpleType>
-					<xs:restriction base="xs:NMTOKEN">
-						<xs:enumeration value="0"/>
-						<xs:enumeration value="1"/>
-						<xs:enumeration value="2"/>
-						<xs:enumeration value="3"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:attribute>
-		</xs:complexType>
+	<xs:element name="rh" type="LeerType">		
+		<xs:attribute name="flag">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="0"/>
+					<xs:enumeration value="1"/>
+					<xs:enumeration value="2"/>
+					<xs:enumeration value="3"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
 	</xs:element>
-	<xs:element name="min">
-		<xs:complexType mixed="true">
-			<xs:attribute name="flag">
-				<xs:simpleType>
-					<xs:restriction base="xs:NMTOKEN">
-						<xs:enumeration value="0"/>
-						<xs:enumeration value="1"/>
-						<xs:enumeration value="2"/>
-						<xs:enumeration value="3"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:attribute>
-		</xs:complexType>
+	<xs:element name="min" type="LeerType">
+		<xs:attribute name="flag">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="0"/>
+					<xs:enumeration value="1"/>
+					<xs:enumeration value="2"/>
+					<xs:enumeration value="3"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
 	</xs:element>
-	<xs:element name="max">
-		<xs:complexType mixed="true">
-			<xs:attribute name="flag">
-				<xs:simpleType>
-					<xs:restriction base="xs:NMTOKEN">
-						<xs:enumeration value="0"/>
-						<xs:enumeration value="1"/>
-						<xs:enumeration value="2"/>
-						<xs:enumeration value="3"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:attribute>
-		</xs:complexType>
+	<xs:element name="max" type="LeerType">
+		<xs:attribute name="flag">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="0"/>
+					<xs:enumeration value="1"/>
+					<xs:enumeration value="2"/>
+					<xs:enumeration value="3"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
 	</xs:element>
-	<xs:element name="m_50">
-		<xs:complexType mixed="true"/>
-	</xs:element>
-	<xs:element name="m_100">
-		<xs:complexType mixed="true"/>
-	</xs:element>
-	<xs:element name="longitude">
-		<xs:complexType mixed="true"/>
-	</xs:element>
-	<xs:element name="latitude">
-		<xs:complexType mixed="true"/>
-	</xs:element>
-	<xs:element name="hr">
-		<xs:complexType mixed="true"/>
-	</xs:element>
-	<xs:element name="dl_vn">
-		<xs:complexType mixed="true"/>
-	</xs:element>
-	<xs:element name="avg">
-		<xs:complexType mixed="true">
-			<xs:attribute name="flag">
-				<xs:simpleType>
-					<xs:restriction base="xs:NMTOKEN">
-						<xs:enumeration value="0"/>
-						<xs:enumeration value="1"/>
-						<xs:enumeration value="2"/>
-						<xs:enumeration value="3"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:attribute>
-		</xs:complexType>
+	<xs:element name="m_50" type="LeerType"/>
+	<xs:element name="m_100" type="LeerType"/>
+	<xs:element name="longitude" type="LeerType"/>
+	<xs:element name="latitude" type="LeerType"/>
+	<xs:element name="hr" type="LeerType"/>
+	<xs:element name="dl_vn" type="LeerType"/>
+	<xs:element name="avg" type="LeerType">
+		<xs:attribute name="flag">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="0"/>
+					<xs:enumeration value="1"/>
+					<xs:enumeration value="2"/>
+					<xs:enumeration value="3"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
 	</xs:element>
 </xs:schema>

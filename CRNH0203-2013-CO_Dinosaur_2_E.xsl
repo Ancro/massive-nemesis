@@ -105,17 +105,16 @@
 				Stunde
 			</span>
 			<span class="color temperature">
-				Durchschnittstemperatur
+				Durchschnittslufttemperatur&#160;in&#160;°C
 			</span>
 			<span class="color surface">
-				Durchschnittsbodentemperatur
+				Durchschnittsbodentemperatur&#160;in&#160;°C
 			</span>
 			<span class="color humidity">
-				Luftfeuchtigkeit
+				Luftfeuchtigkeit&#160;in&#160;%
 			</span>
 			<span class="color DINOSAUR">
-				<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Sauroposeidon_dinosaur.svg/15px-Sauroposeidon_dinosaur.svg.png"/>
-				Fehlerhafter Datensatz
+				Fehlerhafter&#160;Datensatz
 			</span>
 			<span id="numberOfUpdates">
 				Datensätze: <xsl:value-of select="count(//set)"/>

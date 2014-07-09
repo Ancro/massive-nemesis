@@ -64,8 +64,10 @@ line.freezing_point {
 
 .color {
 	color: #FFF;
+	display: inline-block;
+	line-height: 150%;
 	margin: 0.4%;
-	padding: 0.4%;
+	padding: 0 0.4%;
 }
 
 .month {
@@ -103,6 +105,10 @@ line.freezing_point {
 	color: #000;
 	margin: 0.3%;
 	padding: 0.3%;
+}
+
+.DINOSAUR:before {
+	content: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Sauroposeidon_dinosaur.svg/15px-Sauroposeidon_dinosaur.svg.png');
 }
 
 #numberOfUpdates {

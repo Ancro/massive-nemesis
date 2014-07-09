@@ -18,7 +18,7 @@ h3.desc {
 }
 
 .key_desc, .value_desc {
-	margin-right: 0.5em;
+	margin-right: 0.25em;
 }
 
 #graphs {
@@ -103,8 +103,6 @@ line.freezing_point {
 .DINOSAUR {
 	border: 1px solid #999;
 	color: #000;
-	margin: 0.3%;
-	padding: 0.3%;
 }
 
 .DINOSAUR:before {

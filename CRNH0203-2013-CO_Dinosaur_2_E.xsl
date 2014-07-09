@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="2.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
 
-	<xsl:strip-spaces/>
-
 	<xsl:output method="xml" doctype-system="about:legacy-compat" omit-xml-declaration="yes" encoding="UTF-8" indent="yes"/>
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml">
@@ -18,9 +16,9 @@
 
 	<xsl:template match="station">
 		<h3 class="desc">
-			<span class="key_desc">Stationsnummer:</span><span class="value_desc"><xsl:value-of select="wbanno"/>;</span>
-			<span class="key_desc">LAT:</span><span class="value_desc"><xsl:value-of select="latitude"/>;</span>
-			<span class="key_desc">LON:</span><span class="value_desc"><xsl:value-of select="longitude"/></span>
+			<span class="key_desc">Stationsnummer:</span><span class="value_desc"><xsl:value-of select="normalize-space(wbanno)"/>;</span>
+			<span class="key_desc">LAT:</span><span class="value_desc"><xsl:value-of select="normalize-space(latitude)"/>;</span>
+			<span class="key_desc">LON:</span><span class="value_desc"><xsl:value-of select="normalize-space(longitude)"/></span>
 		</h3>
 		<div id="graphs">
 			<svg class="time" width="{count(//set) * 16 + 1}" xmlns="http://www.w3.org/2000/svg">
@@ -45,8 +43,8 @@
 				<xsl:for-each select="set/temp/hr">
 					<xsl:choose>
 						<xsl:when test=". > -9999">
-							<xsl:variable name="temp"><xsl:value-of select="."/></xsl:variable>
-							<rect x="{position() * 16 - 15}" y="{100 - .}" height="{. + 50}" width="15" class="temperature"/>
+							<xsl:variable name="temp"><xsl:value-of select="normalize-space(.)"/></xsl:variable>
+							<rect x="{position() * 16 - 15}" y="{100 - $temp}" height="{$temp + 50}" width="15" class="temperature"/>
 							<text x="{position() * 16 - 8}" y="146" class="desc">
 								<xsl:value-of select="floor($temp)"/>
 							</text>
@@ -63,8 +61,8 @@
 				<xsl:for-each select="set/sur/avg">
 					<xsl:choose>
 						<xsl:when test=". > -9999">
-							<xsl:variable name="sur_temp"><xsl:value-of select="."/></xsl:variable>
-							<rect x="{position() * 16 - 15}" y="{100 - .}" height="{. + 50}" width="15" class="surface"/>
+							<xsl:variable name="sur_temp"><xsl:value-of select="normalize-space(.)"/></xsl:variable>
+							<rect x="{position() * 16 - 15}" y="{100 - $sur_temp}" height="{$sur_temp + 50}" width="15" class="surface"/>
 							<text x="{position() * 16 - 8}" y="146" class="desc">
 								<xsl:value-of select="floor($sur_temp)"/>
 							</text>
@@ -81,9 +79,11 @@
 				<xsl:for-each select="set/rh">
 					<xsl:choose>
 						<xsl:when test=". > -9999">
-							<rect x="{position() * 16 - 15}" y="{150 - .}" height="{.}" width="15" class="humidity"/>
+							<xsl:variable name="humid"><xsl:value-of select="normalize-space(.)"/></xsl:variable>
+							<!-- heigth + 10 to reserve some space for the digits -->
+							<rect x="{position() * 16 - 15}" y="{140 - $humid}" height="{$humid + 10}" width="15" class="humidity"/>
 							<text x="{position() * 16 - 8}" y="146" class="desc">
-								<xsl:value-of select="."/>
+								<xsl:value-of select="$humid"/>
 							</text>
 						</xsl:when>
 						<xsl:otherwise>

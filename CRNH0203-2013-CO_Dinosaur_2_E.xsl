@@ -2,6 +2,8 @@
 <xsl:stylesheet version="2.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
 
 	<xsl:output method="xml" doctype-system="about:legacy-compat" omit-xml-declaration="yes" encoding="UTF-8" indent="yes"/>
+
+	<!-- Grundlegende HTML-Struktur -->
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml">
 			<head>
@@ -14,13 +16,19 @@
 		</html>
 	</xsl:template>
 
+	<!-- Bestandteile des Body-Elements -->
 	<xsl:template match="station">
+		<!-- Kopfzeile -->
 		<h3 class="desc">
 			<span class="key_desc">Stationsnummer:</span><span class="value_desc"><xsl:value-of select="normalize-space(wbanno)"/>;</span>
 			<span class="key_desc">LAT:</span><span class="value_desc"><xsl:value-of select="normalize-space(latitude)"/>;</span>
 			<span class="key_desc">LON:</span><span class="value_desc"><xsl:value-of select="normalize-space(longitude)"/></span>
 		</h3>
+
+		<!-- SVG-Elemente -->
 		<div id="graphs">
+
+			<!-- Monat, Tag und volle Stunde der Messung -->
 			<svg class="time" width="{count(//set) * 16 + 1}" xmlns="http://www.w3.org/2000/svg">
 				<xsl:for-each select="set">
 					<xsl:variable name="date"><xsl:value-of select="utc_d"/></xsl:variable>
@@ -39,9 +47,12 @@
 					</text>
 				</xsl:for-each>
 			</svg>
+
+			<!-- Durchschnittslufttemperatur -->
 			<svg class="graph" width="{count(//set) * 16 + 1}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 				<xsl:for-each select="set/temp/hr">
 					<xsl:choose>
+						<!-- Valide Daten anzeigen -->
 						<xsl:when test=". > -9999">
 							<xsl:variable name="temp"><xsl:value-of select="normalize-space(.)"/></xsl:variable>
 							<rect x="{position() * 16 - 15}" y="{100 - $temp}" height="{$temp + 50}" width="15" class="temperature"/>
@@ -49,17 +60,22 @@
 								<xsl:value-of select="floor($temp)"/>
 							</text>
 						</xsl:when>
+						<!-- Invalide Daten ausblenden (durch Dinosaurier ersetzen) -->
 						<xsl:otherwise>
 							<image x="{position() * 16 - 15}" y="141" width="15" height="10" xlink:href="https://upload.wikimedia.org/wikipedia/commons/1/10/Sauroposeidon_dinosaur.svg"/>
 						</xsl:otherwise>
 					</xsl:choose>
 				</xsl:for-each>
+				<!-- 0-Grad-Linie -->
 				<text x="5" y="95" class="freezing_point">Nullpunkt</text>
 				<line x1="0" y1="100" x2="{count(//set) * 16 + 1}" y2="100" class="freezing_point"/>
 			</svg>
+
+			<!-- Durchschnittsbodentemperatur -->
 			<svg class="graph" width="{count(//set) * 16 + 1}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 				<xsl:for-each select="set/sur/avg">
 					<xsl:choose>
+						<!-- Valide Daten anzeigen -->
 						<xsl:when test=". > -9999">
 							<xsl:variable name="sur_temp"><xsl:value-of select="normalize-space(.)"/></xsl:variable>
 							<rect x="{position() * 16 - 15}" y="{100 - $sur_temp}" height="{$sur_temp + 50}" width="15" class="surface"/>
@@ -67,6 +83,7 @@
 								<xsl:value-of select="floor($sur_temp)"/>
 							</text>
 						</xsl:when>
+						<!-- Invalide Daten ausblenden (durch Dinosaurier ersetzen) -->
 						<xsl:otherwise>
 							<image x="{position() * 16 - 15}" y="141" width="15" height="10" xlink:href="https://upload.wikimedia.org/wikipedia/commons/1/10/Sauroposeidon_dinosaur.svg"/>
 						</xsl:otherwise>
@@ -78,21 +95,24 @@
 			<svg class="graph" width="{count(//set) * 16 + 1}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 				<xsl:for-each select="set/rh">
 					<xsl:choose>
+						<!-- Valide Daten anzeigen -->
 						<xsl:when test=". > -9999">
 							<xsl:variable name="humid"><xsl:value-of select="normalize-space(.)"/></xsl:variable>
-							<!-- heigth + 10 to reserve some space for the digits -->
+							<!-- "height" wird um 10 erhöht, damit die Zahlenwerte immer sichtbar bleiben -->
 							<rect x="{position() * 16 - 15}" y="{140 - $humid}" height="{$humid + 10}" width="15" class="humidity"/>
 							<text x="{position() * 16 - 8}" y="146" class="desc">
 								<xsl:value-of select="$humid"/>
 							</text>
 						</xsl:when>
+						<!-- Invalide Daten ausblenden (durch Dinosaurier ersetzen) -->
 						<xsl:otherwise>
 							<image x="{position() * 16 - 15}" y="141" width="15" height="10" xlink:href="https://upload.wikimedia.org/wikipedia/commons/1/10/Sauroposeidon_dinosaur.svg"/>
 						</xsl:otherwise>
 					</xsl:choose>
 				</xsl:for-each>
-				</svg>
+			</svg>
 		</div>
+		<!-- Legende -->
 		<div id="caption">
 			Legende:
 			<span class="color month">
@@ -121,6 +141,8 @@
 			</span>
 		</div>
 	</xsl:template>
+
+	<!-- Ungenutzte Templates werden ausgeblendet -->
 
 	<xsl:template match="wbanno">
 	</xsl:template>

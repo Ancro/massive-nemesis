@@ -117,7 +117,7 @@
 				Fehlerhafter&#160;Datensatz
 			</span>
 			<span id="numberOfUpdates">
-				Datensätze: <xsl:value-of select="count(//set)"/>
+				Datensätze:&#160;<xsl:value-of select="count(//set)"/>
 			</span>
 		</div>
 	</xsl:template>

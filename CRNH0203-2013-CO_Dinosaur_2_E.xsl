@@ -50,7 +50,7 @@
 							</text>
 						</xsl:when>
 						<xsl:otherwise>
-							<image x="{position() * 16 - 15}" y="141" width="15" height="10" xlink:href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Sauroposeidon_dinosaur.svg/15px-Sauroposeidon_dinosaur.svg.png"/>
+							<image x="{position() * 16 - 15}" y="141" width="15" height="10" xlink:href="https://upload.wikimedia.org/wikipedia/commons/1/10/Sauroposeidon_dinosaur.svg"/>
 						</xsl:otherwise>
 					</xsl:choose>
 				</xsl:for-each>
@@ -68,7 +68,7 @@
 							</text>
 						</xsl:when>
 						<xsl:otherwise>
-							<image x="{position() * 16 - 15}" y="141" width="15" height="10" xlink:href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Sauroposeidon_dinosaur.svg/15px-Sauroposeidon_dinosaur.svg.png"/>
+							<image x="{position() * 16 - 15}" y="141" width="15" height="10" xlink:href="https://upload.wikimedia.org/wikipedia/commons/1/10/Sauroposeidon_dinosaur.svg"/>
 						</xsl:otherwise>
 					</xsl:choose>
 				</xsl:for-each>
@@ -87,7 +87,7 @@
 							</text>
 						</xsl:when>
 						<xsl:otherwise>
-							<image x="{position() * 16 - 15}" y="141" width="15" height="10" xlink:href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Sauroposeidon_dinosaur.svg/15px-Sauroposeidon_dinosaur.svg.png"/>
+							<image x="{position() * 16 - 15}" y="141" width="15" height="10" xlink:href="https://upload.wikimedia.org/wikipedia/commons/1/10/Sauroposeidon_dinosaur.svg"/>
 						</xsl:otherwise>
 					</xsl:choose>
 				</xsl:for-each>
